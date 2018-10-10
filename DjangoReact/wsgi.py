@@ -9,8 +9,11 @@ https://docs.djangoproject.com/en/2.1/howto/deployment/wsgi/
 
 import os
 
-from django.core.wsgi import get_wsgi_application
+from django.core.wsgi import get_wsgi_apllication
+from whitenoise.django import DjangoWhiteNoise
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'DjangoReact.settings')
+os.environ.setdefault("DJANGO_SETTINGS_MODULE",
+"DjangoReact.settings")
 
-application = get_wsgi_application()
+application = get_wsgi_apllication()
+application = DjangoWhiteNoise(application)
